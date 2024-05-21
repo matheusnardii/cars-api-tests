@@ -20,9 +20,9 @@ describe("Integration test: update car", () => {
     test("Should throw an error when try to update a car with invalid body", async () => {
         const car = await prisma.car.create({data: carCreateBodyMock});
         
-        const wrongNameCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidBodyMock);
+        const wrongBodyCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidBodyMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongBodyCar.status).toBe(409);
     });
 
     test("Should throw an error when try to create a car with invalid name", async () => {
@@ -36,33 +36,33 @@ describe("Integration test: update car", () => {
     test("Should throw an error when try to update a car with invalid brand", async () => {
         const car = await prisma.car.create({data: carCreateBodyMock});
 
-        const wrongNameCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidBrandMock);
+        const wrongBrandCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidBrandMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongBrandCar.status).toBe(409);
     });
 
     test("Should throw an error when try to update a car with invalid description", async () => {
         const car = await prisma.car.create({data: carCreateBodyMock});
 
-        const wrongNameCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidDescriptionMock);
+        const wrongDescriptionCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidDescriptionMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongDescriptionCar.status).toBe(409);
     });
     
     test("Should throw an error when try to update a car with invalid year", async () => {
         const car = await prisma.car.create({data: carCreateBodyMock});
 
-        const wrongNameCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidYearMock);
+        const wrongYearCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidYearMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongYearCar.status).toBe(409);
     });
 
     test("Should throw an error when try to update a car with invalid Km", async () => {
         const car = await prisma.car.create({data: carCreateBodyMock});
         
-        const wrongNameCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidKmMock);
+        const wrongKmCar = await request.patch(`/car/${car.id}`).send(carUpdateInvalidKmMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongKmCar.status).toBe(409);
     });
 
 });

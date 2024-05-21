@@ -10,9 +10,9 @@ describe("Integration test: create car", () => {
     });
 
     test("Should throw an error when try to create a car with invalid body", async () => {
-        const wrongNameCar = await request.post("/car").send(carWithInvalidBodyMock);
+        const wrongBodyCar = await request.post("/car").send(carWithInvalidBodyMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongBodyCar.status).toBe(409);
     });
 
     test("Should throw an error when try to create a car with invalid name", async () => {
@@ -22,27 +22,27 @@ describe("Integration test: create car", () => {
     });
 
     test("Should throw an error when try to create a car with invalid brand", async () => {
-        const wrongNameCar = await request.post("/car").send(carWithInvalidBrandMock);
+        const wrongBrandCar = await request.post("/car").send(carWithInvalidBrandMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongBrandCar.status).toBe(409);
     });
 
     test("Should throw an error when try to create a car with invalid description", async () => {
-        const wrongNameCar = await request.post("/car").send(carWithInvalidDescriptionMock);
+        const wrongDescriptionCar = await request.post("/car").send(carWithInvalidDescriptionMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongDescriptionCar.status).toBe(409);
     });
     
     test("Should throw an error when try to create a car with invalid year", async () => {
-        const wrongNameCar = await request.post("/car").send(carWithInvalidYearMock);
+        const wrongYearCar = await request.post("/car").send(carWithInvalidYearMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongYearCar.status).toBe(409);
     });
 
     test("Should throw an error when try to create a car with invalid Km", async () => {
-        const wrongNameCar = await request.post("/car").send(carWithInvalidKmMock);
+        const wrongKmCar = await request.post("/car").send(carWithInvalidKmMock);
 
-        expect(wrongNameCar.status).toBe(409);
+        expect(wrongKmCar.status).toBe(409);
     });
 
 });
