@@ -1,6 +1,8 @@
+import { injectable } from "tsyringe";
 import { prisma } from "../database/prisma";
 import { TCar, TCarCreateBody, TCarUpdateBody } from "../schemas/cars.schemas";
 
+injectable()
 export class CarServices {
     async getMany(): Promise<TCar[]> {
         const carList = await prisma.car.findMany();
